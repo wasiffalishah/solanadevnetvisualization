@@ -19,7 +19,6 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 - **Frontend:** HTML, CSS, JavaScript
 - **Blockchain API:** Solana Web3.js
 - **Build Tools:** Webpack/Vite (for font handling and asset bundling)
-- **Fonts:** TrueType font imported for digital-style number display
 
 ## Installation
 
@@ -45,11 +44,6 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 1. Click the **Start** button on the interface to begin fetching real-time blockchain data.
 2. View statistics for blocks and transactions updated every minute.
 3. Analyze detailed block information in the chain visualization.
-
-## Screenshots
-
-![Desktop View](path/to/desktop-screenshot.png)
-![Mobile View](path/to/mobile-screenshot.png)
 
 ## Author
 
