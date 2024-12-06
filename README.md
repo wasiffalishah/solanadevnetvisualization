@@ -1,6 +1,3 @@
-Here's the updated **README.md** file with the new features added:  
-
-```markdown
 # Solana Devnet Blockchain Visualization
 
 A real-time visualization tool for the Solana Devnet blockchain, designed and developed by **Wasiff Ali Shah**. This application provides insights into block and transaction data, making blockchain exploration more intuitive.
@@ -69,4 +66,3 @@ Developed by **Wasiff Ali Shah**
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-```
