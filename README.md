@@ -1,15 +1,22 @@
+Here's the updated **README.md** file with the new features added:  
+
+```markdown
 # Solana Devnet Blockchain Visualization
 
 A real-time visualization tool for the Solana Devnet blockchain, designed and developed by **Wasiff Ali Shah**. This application provides insights into block and transaction data, making blockchain exploration more intuitive.
 
 ## Features
 
-- **Real-Time Data Fetching:** Continuously fetches and displays finalized blocks from the Solana Devnet.
-- **Detailed Block Information:** Shows block height, hash, parent slot, transaction count, and timestamps.
-- **Analytics Dashboard:** Displays:
+- **Real-Time Data Fetching:** Continuously fetches finalized blocks from the Solana Devnet at a speed of **3 blocks per second**.
+- **Detailed Block Information:** Displays block height, hash, parent slot, transaction count, and timestamps.
+- **Analytics Dashboard:** Shows:
   - Total blocks displayed in the last minute.
   - Average transactions per block.
   - Average transactions per minute.
+- **Transaction Explorer:**
+  - View transactions of any block by clicking the "View Transactions" button.
+  - Check details of any transaction by pasting its hash.
+- **Balance Checker:** Easily check the balance of any account by pasting its public key.
 - **User-Friendly Interface:** Clean design with responsive layouts for mobile and desktop users.
 - **Custom Styling:** Includes a digital clock font for presenting stats in an eye-catching manner.
 - **Error Handling:** Shows popup alerts for connectivity or data fetch issues.
@@ -19,6 +26,7 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 - **Frontend:** HTML, CSS, JavaScript
 - **Blockchain API:** Solana Web3.js
 - **Build Tools:** Webpack/Vite (for font handling and asset bundling)
+- **Fonts:** TrueType font imported for digital-style number display
 
 ## Installation
 
@@ -43,7 +51,14 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 
 1. Click the **Start** button on the interface to begin fetching real-time blockchain data.
 2. View statistics for blocks and transactions updated every minute.
-3. Analyze detailed block information in the chain visualization.
+3. Explore the transaction details of any block by clicking the "View Transactions" button.
+4. Use the **Transaction Checker** to get detailed information about any transaction by pasting its hash.
+5. Use the **Balance Checker** to see the balance of any account by entering its public key.
+
+## Screenshots
+
+![Desktop View](path/to/desktop-screenshot.png)
+![Mobile View](path/to/mobile-screenshot.png)
 
 ## Author
 
@@ -54,3 +69,4 @@ Developed by **Wasiff Ali Shah**
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+```
