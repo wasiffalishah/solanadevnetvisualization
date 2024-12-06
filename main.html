@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solana Devnet Blockchain Visualization</title>
+    <script src="https://unpkg.com/@solana/web3.js@1.70.0/lib/index.iife.min.js"></script>
+    <link
+      rel="icon"
+      href="https://cryptologos.cc/logos/solana-sol-logo.png"
+      type="image/x-icon"
+      sizes="any"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="nav.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="wasiff.png" alt="Solana Logo" />
+      <nav>
+        <ul>
+          <li><a href="">Home</a></li>
+          <li><a href="gettransaction.html">Transaction</a></li>
+          <li><a href="getbalance.html">Balance</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container">
+      <h1>Solana Devnet Visualization</h1>
+      <div id="blockStats" class="stats-container"></div>
+
+      <div class="block-chain" id="blockChainContainer"></div>
+    </div>
+
+    <footer>
+      &copy; Solana Devnet Visualization<br />
+      East Side Group |
+      <a
+        href="https://wasiffalishah.netlify.app"
+        target="_blank"
+        style="color: white; text-decoration: none"
+      >
+        Wasiff Ali Shah</a
+      >
+      &nbsp;
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="https://cryptologos.cc/logos/solana-sol-logo.png"
+      type="image/x-icon"
+      sizes="any"
+    />
+    <title>Transactions for Block | Solana Devnet Visualization</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #1f1f1f;
+        color: #ffffff;
+      }
+
+      header,
+      footer {
+        background-color: #1f1f1f;
+        color: #ffffff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 40px auto;
+        padding: 20px;
+        padding-top: 10px;
+        margin-top: 5px;
+        background-color: #333;
+        border-radius: 8px;
+        box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+        overflow-x: auto; /* Allow horizontal scrolling if needed */
+        word-wrap: break-word;
+      }
+
+      .transaction {
+        background-color: #444;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        color: #0f0;
+        font-family: monospace;
+        word-wrap: break-word; /* Ensure text doesn't overflow */
+      }
+
+      footer a {
+        color: white;
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 10px; /* Reduce padding on smaller screens */
+        }
+
+        .transaction {
+          font-size: 14px; /* Smaller text size for mobile */
+          padding: 8px; /* Reduce padding */
+        }
+      }
+    </style>
+
+    <link rel="stylesheet" href="nav.css" />
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="wasiff.png" alt="Solana Logo" />
+      <nav>
+        <ul>
+          <li><a href="main.html">Home</a></li>
+          <li><a href="gettransaction.html">Transaction</a></li>
+          <li><a href="getbalance.html">Balance</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="container" id="transactionsContainer">
+      <!-- Transaction details will be loaded here -->
+    </div>
+
+    <footer>
+      &copy; Solana Devnet Visualization<br />
+      East Side Group |
+      <a
+        href="https://wasiffalishah.netlify.app"
+        target="_blank"
+        style="color: white; text-decoration: none"
+      >
+        Wasiff Ali Shah</a
+      >
+      &nbsp;
+    </footer>
+
+    <script src="https://unpkg.com/@solana/web3.js@1.70.0/lib/index.iife.min.js"></script>
+    <script>
+      async function fetchTransactions() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const parentSlot = urlParams.get("parentSlot");
+        const parsedSlot = parseInt(parentSlot, 10); // Convert to integer
+        console.log("Parsed Slot:", parsedSlot);
+
+        // Ensure that parentSlot is valid before proceeding
+        if (isNaN(parsedSlot)) {
+          console.error("Invalid parentSlot value");
+          return;
+        }
+
+        const network = "https://api.devnet.solana.com";
+        const connection = new solanaWeb3.Connection(network, "finalized");
+
+        try {
+          // Fetch block data using the parsed slot
+          const block = await connection.getBlock(parsedSlot, {
+            maxSupportedTransactionVersion: 0,
+          });
+
+          if (block) {
+            console.log("Block Data:", block); // Check if block data is received correctly
+            const container = document.getElementById("transactionsContainer");
+            container.innerHTML = `<h2>Block #${block.blockHeight} Transactions</h2>`;
+
+            // Display basic block info
+            container.innerHTML += `
+                    <p><strong>Block Hash:</strong> ${block.blockhash}</p>
+                    <p><strong>Previous Block Hash:</strong> ${
+                      block.previousBlockhash || "N/A"
+                    }</p>
+                    <p><strong>Slot:</strong> ${parsedSlot}</p>
+                `;
+
+            // Display transactions
+            block.transactions.forEach((txn, index) => {
+              const txnDiv = document.createElement("div");
+              txnDiv.classList.add("transaction");
+              txnDiv.innerHTML = `
+                        <p><strong>Transaction ${index + 1}:</strong></p>
+                        <p><strong>Signature:</strong> ${
+                          txn.transaction.signatures[0]
+                        }</p>
+                        <p><strong>Status:</strong> ${
+                          txn.meta.err ? "Failed" : "Success"
+                        }</p>
+                    `;
+              container.appendChild(txnDiv);
+            });
+          }
+        } catch (error) {
+          console.error("Error fetching transactions:", error);
+        }
+      }
+
+      // Fetch the transactions on page load
+      window.onload = fetchTransactions;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+/* General Styles */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+header {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo {
+  max-width: 60px;
+  height: auto;
+  margin-top: 5px;
+}
+
+footer {
+  background-color: #1f1f1f;
+  color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  padding-top: 10px;
+  margin-top: 5px;
+  background-color: #333;
+  border-radius: 8px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  font-family: monospace;
+}
+
+button {
+  padding: 15px 30px;
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.block-chain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.block {
+  background-color: #444;
+  width: 320px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  color: #0f0;
+  font-family: monospace;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: break-word;
+}
+
+.block strong {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.block p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.block .transactions {
+  max-height: 100px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ddd;
+  color: #f1f1f1;
+}
+
+@keyframes wireFlow {
+  0% {
+    background-position: 0 -100%;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.wire {
+  height: 20px;
+  width: 2px;
+  background: linear-gradient(to bottom, #00ff00 20%, #003300 50%, #00ff00 80%);
+  background-size: 100% 200%; /* Ensures smooth animation */
+  animation: wireFlow 0.5s linear infinite; /* 2s for each full downward cycle */
+  margin-top: 5px;
+}
+
+
+.block button {
+  display: block;
+  margin: 10px auto 0; /* Center horizontally and add margin for spacing */
+}
+/* Digital clock font for numbers */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); /* A popular digital font */
+
+#blockStats {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  font-size: 16px;
+  display: flex; /* Align stats horizontally */
+  justify-content: space-around; /* Distribute space between items */
+  flex-wrap: wrap; /* Allow wrapping for smaller devices if needed */
+
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#blockStats p {
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column; /* Stack text on top of the number */
+  align-items: center; /* Center the text and number horizontally */
+  flex: 1; /* Each item takes equal space */
+  min-width: 100px; /* Ensure items don't shrink too small */
+}
+
+.digital-number {
+  font-family: monospace;
+  font-size: 32px;
+  color: #00FF00; /* Green color similar to a digital clock */
+}
+
+.digital-label {
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+  font-size: 12px; /* Smaller font size for the labels */
+  margin-bottom: 5px; /* Space between label and number */
+}
+
+/* Media query for smaller screens (mobile) */
+@media (max-width: 768px) {
+  #blockStats {
+    justify-content: space-between; /* Adjust spacing to fit smaller screens */
+  }
+
+  #blockStats p {
+    margin: 5px;
+    min-width: auto; /* Remove minimum width for more flexibility */
+  }
+
+  .digital-number {
+    font-size: 18px; /* Smaller font for numbers on mobile */
+    font-family: monospace;
+  }
+
+  .digital-label {
+    font-size: 8px; /* Smaller font for labels on mobile */
+  }
+}
+
+
+/*  neww*/
+
