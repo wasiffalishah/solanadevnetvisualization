@@ -21,8 +21,6 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 
 - **Frontend:** HTML, CSS, JavaScript
 - **Blockchain API:** Solana Web3.js
-- **Build Tools:** Webpack/Vite (for font handling and asset bundling)
-- **Fonts:** TrueType font imported for digital-style number display
 
 ## Installation
 
