@@ -15,7 +15,6 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
   - Check details of any transaction by pasting its hash.
 - **Balance Checker:** Easily check the balance of any account by pasting its public key.
 - **User-Friendly Interface:** Clean design with responsive layouts for mobile and desktop users.
-- **Custom Styling:** Includes a digital clock font for presenting stats in an eye-catching manner.
 - **Error Handling:** Shows popup alerts for connectivity or data fetch issues.
 
 ## Technologies Used
@@ -51,11 +50,6 @@ A real-time visualization tool for the Solana Devnet blockchain, designed and de
 3. Explore the transaction details of any block by clicking the "View Transactions" button.
 4. Use the **Transaction Checker** to get detailed information about any transaction by pasting its hash.
 5. Use the **Balance Checker** to see the balance of any account by entering its public key.
-
-## Screenshots
-
-![Desktop View](path/to/desktop-screenshot.png)
-![Mobile View](path/to/mobile-screenshot.png)
 
 ## Author
 
